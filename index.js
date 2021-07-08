@@ -7,7 +7,7 @@ let express = require('express');
 let server = express();
 server.use(express.json());
 server.use(cors());
-server.use(express.static(path.join(__dirname, 'client/build'))); //where the static files reside
+server.use(express.static(path.join(__dirname, './client/build'))); //where the static files reside
 server.use('/virtual-path', serveIndex(path.join(__dirname, 'client/public'), { 'icons': true})); //if using with serveIndex
 server.use('/public', serveIndex(path.join(__dirname, 'client/files'), { 'icons': true})); //if using with serveIndex
 server.use('/public', express.static('client/files')); // serve the actual files
